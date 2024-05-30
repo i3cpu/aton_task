@@ -1,0 +1,28 @@
+{% extends 'currency_app/base.html' %}
+
+{% block title %}Курсы валют{% endblock %}
+
+{% block content %}
+<br><br>
+<a href="{% url 'currencys_page' %}" id="panel-buttons" class="button" style="float: inline-end;">Назад</a>
+<h1 id="table-heading">Курсы </h1>
+    <div class="currency-table-block" >
+        <table class="currency-table">
+            <thead>
+                <tr>
+                    <th class="table-header">Дата</th>
+                    <th class="table-header">Курс</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rate in rates %}
+                <tr>
+                    <td>{{ rate.date }}</td>
+                    <td>{{ rate.rate }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

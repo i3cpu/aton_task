@@ -1,0 +1,135 @@
+{% extends 'currency_app/base.html' %}
+
+{% block title %}
+    Валюты
+{% endblock %}
+
+
+{% block content %}
+<br>
+<a href="{% url 'main_page' %}" class="button" id="panel-buttons">Главная страница</a>
+<br><br>
+<a href="{% url 'country_currencys_page' %}" class="button" style="background-color: rgb(199, 66, 66);">Получить список валют стран мира</a>
+<br><br>
+<div class="currency-page-container">
+    <div class="currency-container">
+        <h3 id="h3">Курсы и относительные изменения валют</h3>
+        <ul class="currency-list">
+            <li>
+                Доллар 
+                <div>
+                    <a href="{% url 'currency_rates' currency='dollar' %}" class="button">Курс валют</a>
+                    <a href="{% url 'show_relative_changes' currency='dollar' %}" class="button">относительные изменения</a>
+                </div>
+            </li>
+            <li>
+                Евро
+                <div>
+                    <a href="{% url 'currency_rates' currency='evro' %}" class="button">Курс валют</a>
+                    <a href="{% url 'show_relative_changes' currency='evro' %}" class="button">относительные изменения</a>
+                </div>
+            </li>
+            <li>
+                Фунт 
+                <div>
+                    <a href="{% url 'currency_rates' currency='pounds' %}" class="button">Курс валют</a>
+                    <a href="{% url 'show_relative_changes' currency='pounds' %}" class="button">относительные изменения</a>
+                </div>
+            </li>
+            <li>
+                Японская йена 
+                <div>
+                    <a href="{% url 'currency_rates' currency='yen' %}" class="button">Курс валют</a>
+                    <a href="{% url 'show_relative_changes' currency='yen' %}" class="button">относительные изменения</a>
+                </div>
+            </li>
+            <li>
+                Турецкая лира 
+                <div>
+                    <a href="{% url 'currency_rates' currency='lira' %}" class="button">Курс валют</a>
+                    <a href="{% url 'show_relative_changes' currency='lira' %}" class="button">относительные изменения</a>
+                </div>
+            </li>
+            <li>
+                Индийская рупия 
+                <div>
+                    <a href="{% url 'currency_rates' currency='rupee' %}" class="button">Курс валют</a>
+                    <a href="{% url 'show_relative_changes' currency='rupee' %}" class="button">относительные изменения</a>
+                </div>
+            </li>
+            <li>
+                Китайский юань 
+                <div>
+                    <a href="{% url 'currency_rates' currency='CNY' %}" class="button">Курс валют</a>
+                    <a href="{% url 'show_relative_changes' currency='CNY' %}" class="button">относительные изменения</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="relative-changes-graph-form-container">
+        <form method="post" action="" class="currency-form">
+            <h3 id="h3">Получить график относительных изменеий</h3>
+            {% csrf_token %}
+            <div class="checkbox">
+                <label>Выберите страны:</label>
+
+                <input type="checkbox" id="Austria" name="countries" value="Austria">
+                <label for="Austria">Austria</label>
+
+                <input type="checkbox" id="Greece" name="countries" value="Greece">
+                <label for="Greece">Greece</label>
+
+                <input type="checkbox" id="Italy" name="countries" value="Italy">
+                <label for="Italy">Italy</label>
+
+                <input type="checkbox" id="Spain" name="countries" value="Spain">
+                <label for="Spain">Spain</label>
+
+                <input type="checkbox" id="USA" name="countries" value="USA">
+                <label for="USA">USA</label>
+
+                <input type="checkbox" id="Salvador" name="countries" value="Salvador">
+                <label for="Salvador">Salvador</label>
+
+                <input type="checkbox" id="Bonaire" name="countries" value="Bonaire">
+                <label for="Bonaire">Bonaire</label>
+
+                <input type="checkbox" id="Haiti" name="countries" value="Haiti">
+                <label for="Haiti">Haiti</label> 
+
+                <input type="checkbox" id="Monaco" name="countries" value="Monaco">
+                <label for="Monaco">Monaco</label>
+
+                <input type="checkbox" id="Germany" name="countries" value="Germany">
+                <label for="Germany">Germany</label>
+
+                <input type="checkbox" id="China" name="countries" value="China">
+                <label for="China">China</label>
+
+                <input type="checkbox" id="Malvinas Islands" name="countries" value="Malvinas Islands">
+                <label for="Malvinas Islands">Malvinas Islands</label>
+
+                <input type="checkbox" id="Japan" name="countries" value="Japan">
+                <label for="Japan">Japan</label>
+
+                <input type="checkbox" id="Turkey" name="countries" value="Turkey">
+                <label for="Turkey">Turkey</label>
+
+                <input type="checkbox" id="India" name="countries" value="India">
+                <label for="India">India</label>
+
+            </div>
+
+            <label for="start_date">Дата начала:</label>
+            <input type="date" id="start_date" name="start_date" min="{{ min_date }}" max="{{ max_date }}"><br><br>
+
+            <label for="end_date">Дата окончания:</label>
+            <input type="date" id="end_date" name="end_date" min="{{ min_date }}" max="{{ max_date }}"><br><br>
+
+            <input type="submit" value="Получить" class="submit-button">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

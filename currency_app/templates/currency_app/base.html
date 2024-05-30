@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'currency_app/style.css' %}">  
+</head>
+<body>
+    <div class="container">
+        <section class="main">
+            {% block content %}
+            {% endblock %}
+        </section>
+    </div>
+
+
+</body>
+</html>

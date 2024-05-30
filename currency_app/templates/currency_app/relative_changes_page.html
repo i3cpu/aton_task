@@ -1,0 +1,31 @@
+{% extends 'currency_app/base.html' %}
+<!-- {{relative_changes}} -->
+
+{% block title %}Относительные изменения{% endblock %}
+
+{% block content %}
+<br><br>
+    <a href="{% url 'currencys_page' %}" id="panel-buttons" class="button" style="float: inline-end;">Назад</a>
+<h1 id="table-heading">Относительные изменения курса </h1>
+    <div class="currency-table-block" >
+        <table class="currency-table">
+            <thead>
+                <tr>
+                    <th class="table-header">Дата</th>
+                    <!-- <th class="table-header">Курс</th> -->
+                    <th class="table-header">Процент %</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in relative_changes %}
+                <tr>
+                    <td>{{ i.date }}</td>
+                    <!-- <td>{{ i.rate }}</td> -->
+                    <td>{{ i.change_percent }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'currency_app/base.html' %}
+{% load static %}
+
+{% block title %}Валюты стран мира{% endblock %}
+
+{% block content %}
+    <br><br>
+    <a href="{% url 'currencys_page' %}" id="panel-buttons" class="button" style="float: inline-end;">Назад</a>
+    <h1 id="table-heading">Список валют стран мира </h1>
+    <div class="currency-table-block" >
+        <table class="currency-table">
+            <thead>
+                <tr>
+                    <th class="table-header">Страна</th>
+                    <th class="table-header">Валюта</th>
+                    <th class="table-header">Код %</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in post %}
+                <tr>
+                    <td>{{ i.country }}</td>
+                    <td>{{ i.currency }}</td>
+                    <td>{{ i.currency_code }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

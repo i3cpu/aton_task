@@ -1,0 +1,10 @@
+{% extends 'currency_app/base.html' %}
+{% load static %}
+
+{% block title %}График{% endblock %}
+
+{% block content %}
+    <div>
+        {{ graph_data|safe }}
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'currency_app/base.html' %}
+{% load static %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h2 class="date-range-title">Выберите диапазон дат</h2>
+    <form method="post" class="date-range-form">
+        {% csrf_token %}
+        <label for="start_date" class="date-label">Дата начала:</label>
+        <input type="date" name="start_date" id="start_date" class="date-input">
+        <label for="end_date" class="date-label">Дата окончания:</label>
+        <input type="date" name="end_date" id="end_date" class="date-input">
+        <button type="submit" class="submit-button">Показать</button>
+    </form>
+{% endblock %}

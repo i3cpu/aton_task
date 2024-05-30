@@ -1,0 +1,230 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main{
+    padding:10px 10px 10px 10px;
+
+}
+
+.date-range-form {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.date-range-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 50px;
+    margin-top: 80px;
+
+}
+
+.date-label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.date-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* currencys_page styles ----------*/
+.currency-container {
+    width: 60%;
+    /* margin: 0 auto; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.currency-page-container{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+#h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 50px;
+    
+}
+
+.currency-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.currency-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+#panel-buttons{
+    background-color: rgb(38, 36, 36)
+}
+
+.currency-list li:last-child {
+    border-bottom: none;
+}
+
+.button {
+    padding: 8px 12px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #25ba54;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0f7b28;
+}
+
+/* currency_rates page ---------------------- */
+
+.currency-table-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#table-heading {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.currency-table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 2px solid #92bfef;
+    font-size: 15px;
+}
+
+.table-header {
+    padding: 10px;
+    text-align: center;
+    background-color: #92bfef;
+    color: #fff;
+    border: 1px solid #ddd;
+}
+
+.currency-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.currency-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.currency-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+
+/* relative_changes_graph_form -------- */
+
+.currency-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.currency-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.currency-form .checkbox {
+    margin-bottom: 20px;
+}
+
+.currency-form .checkbox label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.currency-form input[type="checkbox"] {
+    margin: 0;
+    display: none;
+}
+
+.currency-form input[type="checkbox"] + label {
+    display: inline-block;
+    width: calc(33.33% - 20px); 
+    margin-bottom: 10px;
+    background-color: #ddd;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.currency-form input[type="checkbox"]:checked + label {
+    background-color: #007BFF; 
+    color: white; 
+}
+
+.currency-form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
